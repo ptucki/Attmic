@@ -1,0 +1,233 @@
+@use '../abstracts' as a; //We can use it because of _index.scss in abstract folder and forward.
+
+$color1: a.$first-color; 
+$color2: a.$second-color;
+$color3: a.$third-color;
+
+
+
+//Menu fonts
+$menu-font-size: 12px;
+$letter-spacing: 3px;
+
+//Menu sizes
+$menu-height: 50px;
+$menu-list-tablet-width: 200px;
+$common-margin: 15px;
+
+.main-nav {
+  
+  @include a.font-arcon-regular(a.rem($menu-font-size), black, normal);
+  letter-spacing: $letter-spacing;
+  //background-color: red;
+  position: fixed;
+  max-height: $menu-height;
+  top: -$menu-height;
+  transition-duration: 1s;
+  top: 0px;
+  
+
+  //Phone
+  @include a.breakpoint-min("zero") {
+    width: 100%;
+    display: grid;
+    grid-template-columns: $menu-height auto;
+    grid-template-rows: $menu-height; 
+    grid-template-areas: "hamburger logo";
+  }
+
+  @include a.breakpoint-min("tablet-wide") {
+    display: grid;
+    grid-template-columns: 150px 150px auto;
+    grid-template-rows: $menu-height;
+    grid-template-areas: "logo hamburger menu ";
+    //transition-duration: 0s;
+    
+  }
+  
+  // LOGO
+  &__logo {
+    
+    // logo positioning
+    width: 100px;
+    grid-area: logo;
+    //background-color: aqua;
+    background-image: url(../../svg/logo.svg), none;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    @include a.breakpoint-min("zero") {
+      height: $menu-height;
+      margin-right: $common-margin;
+      justify-self: end;
+      filter: grayscale(100%);
+      opacity: 0.8;
+      transition-duration: .2s;
+
+      &:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+      }
+    }
+
+    @include a.breakpoint-min("tablet-wide") {
+      width: 100px;
+      height: $menu-height;
+      margin-left: $common-margin;
+      justify-self: start;
+
+      &:hover {
+        filter: grayscale(0%);
+        transform: translateX(7px);
+        opacity: 1;
+      }
+    }
+
+    &-link {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  // LIST
+  &__list {
+    box-sizing: border-box;
+    //background-color: rgb(228, 237, 160);
+    display: none; // js changes
+
+    @include a.breakpoint-min("zero") {
+      width: 100%;
+      margin-top: $menu-height;
+      position: absolute;
+    }
+
+    @include a.breakpoint-min("tablet-small") {
+      padding-top: $menu-height;
+      top: -$menu-height;
+      display: block;
+      position: absolute;
+      left: -$menu-list-tablet-width;
+      height: 107vh;
+      width: $menu-list-tablet-width;
+      transition-duration: 0.7s;
+      transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+      background-color: rgba(0,0,0,0.1);
+      backdrop-filter: blur(2px);
+    }
+
+    @include a.breakpoint-min("tablet-wide") {
+      margin-top: 0;
+      padding: 0;
+      height: auto;
+      width: auto;
+      position: static;
+      grid-area: menu;
+      height: $menu-height;
+      display: flex;
+      justify-content: flex-end;
+      transition-duration: initial;
+      background-color: rgba(255,255,255,0);
+      backdrop-filter: none;
+
+    }
+
+  }
+
+  &__item {
+    @include a.breakpoint-min("zero") {
+      margin-left: $common-margin;
+    }
+    
+    @include a.breakpoint-min("tablet-small") {
+      margin-left: $common-margin;
+    }
+
+    @include a.breakpoint-min("tablet-wide") {
+      margin-left: 0px;
+      box-sizing: border-box;
+      display: flex;
+      min-width: 140px;
+    }
+  }
+  
+  &__link {
+    transition-duration: 0.1s;
+    color: $color2;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: calc($menu-height - 15px);
+    border-top: 0px solid $color2;
+
+    @include a.breakpoint-min("tablet-wide") {
+      justify-content: center;
+    }
+
+    &:hover {
+      color: $color1;
+      
+      @include a.breakpoint-min("tablet-small") {
+        margin-left: 5px;
+      }
+
+      @include a.breakpoint-min("tablet-wide") {
+        margin-left: 0px;
+        border-top: 3px solid $color1;
+      }
+    }
+
+    &--active {
+      
+      color: $color2;
+
+      @include a.breakpoint-min("tablet-wide") {
+        border-top: 3px solid $color2;
+      }
+    }
+  }
+
+  &__hamburger {
+    height: $menu-height;
+    width: $menu-height;
+
+    @include a.breakpoint-min("zero") {
+      position: relative;
+      z-index: 1;
+      max-width: $menu-height;
+      max-height: $menu-height;
+    }
+
+    @include a.breakpoint-min("tablet-wide") {
+      grid-area: hamburger;
+      display: none;
+    }
+  }
+
+  &__hamburger-svg {
+    $margin-hamburger: $common-margin;
+
+    margin: $margin-hamburger;
+    max-height: calc($menu-height - 2 * $margin-hamburger);
+
+    transition-duration: 0.2s;
+
+    & > line {
+      stroke: $color2;
+      transition-duration: 0.2s;
+    }
+
+    &:hover  {
+      transform: scale(1.2);
+    }
+    &:hover > line {
+      stroke: $color1;
+    }
+  }
+
+
+  
+}

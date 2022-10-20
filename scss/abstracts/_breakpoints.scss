@@ -1,0 +1,77 @@
+$breakpoints: (
+    "zero":         0px,
+    "phone":        400px,
+    "phone-wide":   480px,
+    "phablet":      560px,
+    "tablet-small": 640px,
+    "tablet":       768px,
+    "tablet-wide":  1024px,
+    "desktop":      1248px,
+    "desktop-wide": 1440px
+);
+
+@mixin zero {
+  @media(min-width: map-get($breakpointsm, "zero")) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media(min-width: map-get($breakpointsm, "phone")) {
+    @content;
+  }
+}
+
+@mixin phone-wide {
+  @media(min-width: map-get($breakpointsm, "phone-wide")) {
+    @content;
+  }
+}
+
+@mixin phablet {
+  @media(min-width: map-get($breakpointsm, "phablet")) {
+    @content;
+  }
+}
+
+@mixin tablet-small {
+  @media(min-width: map-get($breakpointsm, "tablet-small")) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media(min-width: map-get($breakpointsm, "tablet")) {
+    @content;
+  }
+}
+
+@mixin tablet-wide {
+  @media(min-width: map-get($breakpointsm, "tablet-wide")) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media(min-width: map-get($breakpointsm, "desktop")) {
+    @content;
+  }
+}
+
+@mixin desktop-wide {
+  @media(min-width: map-get($breakpointsm, "desktop-wide")) {
+    @content;
+  }
+}
+
+@mixin breakpoint-min($bp: "zero") {
+  @media (min-width: map-get($breakpoints, $bp)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-max($bp: "zero") {
+  @media (max-width: map-get($breakpoints, $bp)) {
+    @content;
+  }
+}
