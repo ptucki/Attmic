@@ -1,6 +1,14 @@
 @use "core/reset";
 @use "abstracts";
 @use "components/horizontal-main-nav";
-@use "components/home-header";
-@use "sections/main-content-home";
+@use "sections/home-header";
+@use "sections/home-section";
 @use "sections/footer";
+
+body{
+  background-image: url("../img/jpg/hero.jpg");
+  
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}

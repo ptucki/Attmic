@@ -27,13 +27,14 @@ $common-margin: 15px;
   transition-duration: 0.7s;
   top: 0px;
   
+  
   @include a.breakpoint-min("zero") {
     width: 100%;
     display: grid;
     grid-template-columns: $menu-height auto;
     grid-template-rows: $menu-height; 
     grid-template-areas: "hamburger logo";
-    background-color: #070606;
+    background-color: rgb(14, 14, 17);
   }
 
   @include a.breakpoint-min("tablet-small") {
@@ -44,7 +45,7 @@ $common-margin: 15px;
     display: grid;
     grid-template-columns: 150px 150px auto;
     grid-template-rows: $menu-height;
-    grid-template-areas: "logo hamburger menu ";    
+    grid-template-areas: "logo hamburger menu";
   }
   
   // LOGO
@@ -87,6 +88,7 @@ $common-margin: 15px;
     }
 
     &-link {
+      
       display: block;
       position: relative;
       width: 100%;
@@ -104,11 +106,12 @@ $common-margin: 15px;
       width: 100%;
       margin-top: $menu-height;
       position: absolute;
-      background-color: rgba(14, 17, 17,0.3);
-      backdrop-filter: blur(2px);
+      background-color: rgba(14, 14, 17, 0.9);
+      backdrop-filter: blur(2px);// brightness(0.2);
     }
 
     @include a.breakpoint-min("tablet-small") {
+      
       padding-top: $menu-height;
       top: -$menu-height;
       display: block;
@@ -118,8 +121,8 @@ $common-margin: 15px;
       width: $menu-list-tablet-width;
       transition-duration: 0.7s;
       transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
-      background-color: rgba(14, 17, 17, 0.2);
-      backdrop-filter: blur(2px);
+      //background-color: rgba(14, 17, 17, 0.2);
+      //backdrop-filter: blur(2px) brightness(0.4);
     }
 
     @include a.breakpoint-min("tablet-wide") {
@@ -141,6 +144,8 @@ $common-margin: 15px;
   }
 
   &__item {
+
+
     // @include a.breakpoint-min("zero") {
     //   margin-left: 0px;
     // }
@@ -157,7 +162,7 @@ $common-margin: 15px;
     }
   }
   
-  &__link {
+  &__link {   
     box-sizing: border-box;
     transition-duration: 0.1s;
     color: $color2;
@@ -185,8 +190,8 @@ $common-margin: 15px;
       
     
       @include a.breakpoint-min("zero") {
-        color: $color2;
-        background-color: rgba(14, 17, 17, 0.3);
+        color: $color1;
+        background-color: rgba(255, 255, 255, 0.1);
       }
 
       @include a.breakpoint-min("tablet-small") {
