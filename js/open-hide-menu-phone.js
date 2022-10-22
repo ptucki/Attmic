@@ -91,15 +91,13 @@ window.addEventListener("scroll", ResetHamburger);
 window.addEventListener("resize", ResetHamburger);
 document.querySelector(".main-nav__hamburger").addEventListener("click", ChangeHamburger);
 
-
-
-
 // Make apear menu on scroll up and disappera on scroll down
 window.addEventListener("scroll", function(event) {
   //1024 is a break point, add open ohide menu bar.
   if(window.innerWidth < 1024) {
     if (this.oldScroll > this.scrollY) {
       document.querySelector(".main-nav").style.top = "0px";
+      Reset();
     }
     if(this.oldScroll < this.scrollY) {
       document.querySelector(".main-nav").style.top = "-50px";
