@@ -3,6 +3,7 @@
 {
 //variables
 let list = document.querySelector(".main-nav__list");
+let menu = document.querySelector(".main-nav");
 const init_style = list.style;
 
 // Function to set properties for opening and closing menu with humburger.
@@ -15,6 +16,7 @@ function OpenHideMainNav() {
     }
     else {
       list.style.display = "none";
+      
     }
   }
   else if (window.innerWidth >= 640 && window.innerWidth < 1024) {
@@ -49,7 +51,46 @@ function Reset() {
   else {
     document.querySelector(".main-nav").style.top = "-50px";
   }
+  
+  ResetHamburger();
 }
+
+
+  let lines = document.querySelectorAll(".main-nav__hamburger-line");
+  let isOpen = false;
+  
+function ChangeHamburger() {
+  
+  if(!isOpen) {
+    SetLine(lines[0], 4, 4, 46, 46);
+    SetLine(lines[1], 25, 25, 25, 25);
+    SetLine(lines[2], 4, 46, 46, 4);
+    isOpen = true;
+  } else {
+    SetLine(lines[0], 4, 4, 46, 4);
+    SetLine(lines[1], 4, 25, 46, 25);
+    SetLine(lines[2], 4, 46, 46, 46);
+    isOpen = false;
+  }
+
+}
+
+function SetLine(line ,x1, y1, x2, y2) {
+  line.setAttributeNS(null, 'x1', x1.toString());
+  line.setAttributeNS(null, 'y1', y1.toString());
+  line.setAttributeNS(null, 'x2', x2.toString());
+  line.setAttributeNS(null, 'y2', y2.toString());
+}
+
+function ResetHamburger() {
+  isOpen = true;
+  ChangeHamburger();
+}
+
+window.addEventListener("scroll", ResetHamburger);
+window.addEventListener("resize", ResetHamburger);
+document.querySelector(".main-nav__hamburger").addEventListener("click", ChangeHamburger);
+
 
 
 
@@ -76,6 +117,20 @@ window.addEventListener("scroll", function(event) {
 //Add functionality to hamburger
 document.querySelector(".main-nav__hamburger")
   .addEventListener("click", OpenHideMainNav, false);
+
+{
+  [...document.querySelectorAll(".menu-reset")].forEach(element => {
+    element.addEventListener("click", function() {
+      Reset();
+      if(window.innerWidth < 1024 && window.scrollY != 0) {
+          document.querySelector(".main-nav").style.top = "-50px";
+      }
+      }
+    );
+  });
+  //document.querySelectorAll(".menu-reset").addEventListener("click", Reset);
+}
+
 
 // WINDOW FEATURES
 window.addEventListener("resize", Reset);

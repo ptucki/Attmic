@@ -23,26 +23,28 @@ $common-margin: 15px;
   position: fixed;
   max-height: $menu-height;
   top: -$menu-height;
-  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  transition-duration: 0.7s;
   top: 0px;
   
-
-  //Phone
   @include a.breakpoint-min("zero") {
     width: 100%;
     display: grid;
     grid-template-columns: $menu-height auto;
     grid-template-rows: $menu-height; 
     grid-template-areas: "hamburger logo";
+    background-color: #070606;
+  }
+
+  @include a.breakpoint-min("tablet-small") {
+    background-color: unset;
   }
 
   @include a.breakpoint-min("tablet-wide") {
     display: grid;
     grid-template-columns: 150px 150px auto;
     grid-template-rows: $menu-height;
-    grid-template-areas: "logo hamburger menu ";
-    //transition-duration: 0s;
-    
+    grid-template-areas: "logo hamburger menu ";    
   }
   
   // LOGO
@@ -102,6 +104,8 @@ $common-margin: 15px;
       width: 100%;
       margin-top: $menu-height;
       position: absolute;
+      background-color: rgba(14, 17, 17,0.3);
+      backdrop-filter: blur(2px);
     }
 
     @include a.breakpoint-min("tablet-small") {
@@ -114,12 +118,12 @@ $common-margin: 15px;
       width: $menu-list-tablet-width;
       transition-duration: 0.7s;
       transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
-      background-color: rgba(0,0,0,0.1);
+      background-color: rgba(14, 17, 17, 0.2);
       backdrop-filter: blur(2px);
     }
 
     @include a.breakpoint-min("tablet-wide") {
-      margin-top: 0;
+      margin-top: 0;  
       padding: 0;
       height: auto;
       width: auto;
@@ -137,13 +141,13 @@ $common-margin: 15px;
   }
 
   &__item {
-    @include a.breakpoint-min("zero") {
-      margin-left: $common-margin;
-    }
+    // @include a.breakpoint-min("zero") {
+    //   margin-left: 0px;
+    // }
     
-    @include a.breakpoint-min("tablet-small") {
-      margin-left: $common-margin;
-    }
+    // @include a.breakpoint-min("tablet-small") {
+    //   margin-left: $common-margin;
+    // }
 
     @include a.breakpoint-min("tablet-wide") {
       margin-left: 0px;
@@ -154,6 +158,7 @@ $common-margin: 15px;
   }
   
   &__link {
+    box-sizing: border-box;
     transition-duration: 0.1s;
     color: $color2;
     text-decoration: none;
@@ -163,14 +168,30 @@ $common-margin: 15px;
     height: calc($menu-height - 15px);
     border-top: 0px solid $color2;
 
+    @include a.breakpoint-min("zero") {
+      justify-content: center;
+    }
+
+    @include a.breakpoint-min("tablet-small") {
+      justify-content: left;
+      padding-left: $common-margin;
+    }
+
     @include a.breakpoint-min("tablet-wide") {
       justify-content: center;
     }
 
-    &:hover {
-      color: $color1;
+    &:hover, &:focus {
       
+    
+      @include a.breakpoint-min("zero") {
+        color: $color2;
+        background-color: rgba(14, 17, 17, 0.3);
+      }
+
       @include a.breakpoint-min("tablet-small") {
+        color: $color1;
+        background-color: unset;
         margin-left: 5px;
       }
 
