@@ -25,48 +25,61 @@
    
    //section     - HTML section to be divided;
    //stableSpace - is space where no modification appears
-   function DivideTwoColumnesGrid(section, initFr, endFr) {
+   function DivideTwoColumnesGrid(section, initFr, endFr, space) {
       let sectionProperties = getCoords(section);
-      // console.log(sectionProperties.height);
-      // console.log(window.scrollY);
-      // console.log(window.innerHeight);
 
-      //Section starts appearing on the browser view
-      if(window.scrollY + window.innerHeight >= sectionProperties.top && window.scrollY < sectionProperties.top) {
-         console.log("if");
-         initFr = initFr + ((scrollY + window.innerHeight - sectionProperties.top) /sectionProperties.height) * (endFr - initFr);
-         let ColumnFr = 1 - initFr;
-         section.style.gridTemplateColumns = initFr + "fr " + ColumnFr + "fr";
-      }
-      //Section starts to disappear at the top of the window
-      else if(window.scrollY >= sectionProperties.top && window.scrollY < sectionProperties.top + sectionProperties.height) {
-         console.log("else if");
-         initFr = endFr - (endFr - initFr) * ((window.scrollY - sectionProperties.top) / sectionProperties.height);
-         let ColumnFr = 1 - initFr;
-   
-         section.style.gridTemplateColumns = initFr + "fr " + ColumnFr + "fr";
-      }
-      else{
-         console.log("else");
-         let ColumnFr = 1 - initFr;
-         section.style.gridTemplateColumns = initFr + "fr " + ColumnFr + "fr";
-      }
+      let windowTop = window.scrollY;
+      let windowBottom = windowTop + window.innerHeight;
+      let sectionTop = sectionProperties.top;
+      let sectionBottom = sectionProperties.top + sectionProperties.height;
 
+      let windowSpace = (window.innerHeight) * space;
+
+      let windowFocusTop = windowTop + windowSpace;
+      let windowFocusBottom = windowBottom - windowSpace;  
+
+      // Section starts to appear on the window view.
+      if (sectionTop < windowBottom && sectionTop >= windowFocusBottom) {
+         initFr = initFr + (endFr - initFr) * ((windowBottom - sectionTop) / windowSpace);
+         let supplementFr = 1 - initFr;
+         section.style.gridTemplateColumns = initFr + "fr " + supplementFr + "fr";
+         //zmiana grida
+      }
+      // Section starts to appear on the no-chamge range.
+      else if (sectionTop <= windowFocusBottom && sectionBottom >= windowFocusTop) {
+         let supplementFr = 1 - endFr;
+         section.style.gridTemplateColumns = endFr + "fr " + supplementFr + "fr";
+      }
+      // Section starts leaving the no-chamge range.
+      else if (sectionBottom < windowFocusTop && sectionBottom >= windowTop) {
+         initFr = initFr + (endFr - initFr) *((sectionBottom - windowTop) / windowSpace);
+         let supplementFr = 1 - initFr;
+         section.style.gridTemplateColumns = initFr + "fr " + supplementFr + "fr";
+      }
+      // Section does not appear on the window view.
+      else {
+         let supplementFr = 1 - initFr;
+         section.style.gridTemplateColumns = initFr + "fr " + supplementFr + "fr";
+      } 
    }
 
-
    let sectionOnScroll = document.querySelectorAll(".section");
+   let homeheader = document.querySelector(".header");
 
    window.addEventListener("scroll", function() {
-      DivideTwoColumnesGrid(document.querySelector(".header"), 0.2, 0.8);
-      DivideTwoColumnesGrid(sectionOnScroll[0], 1 ,0.4);
-      // [...document.querySelectorAll(".section")].forEach(element => {
-      //    DivideTwoColumnesGrid(element, 0.1, 0.9, 50);
-      // })
+
+      if(window.innerWidth >= 640) {
+         DivideTwoColumnesGrid(homeheader, 0.7, 0.9, 1);
+         DivideTwoColumnesGrid(sectionOnScroll[0], 0.4 ,0.5, 1);
+         // [...document.querySelectorAll(".section")].forEach(element => {
+         //    DivideTwoColumnesGrid(element, 0.1, 0.9, 50);
+         // })
+
+      }
 
 
    }, false);
-   
+
    function getCoords(elem) { // crossbrowser version
        var box = elem.getBoundingClientRect();
 
