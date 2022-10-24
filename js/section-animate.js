@@ -1,28 +1,5 @@
 "use strict";
-{
-   let headerImg = document.querySelector(".header__img-container");
-   let header = document.querySelector(".header");
-   const initialColor = headerImg.style.backgroundColor;
-   
-   function ChangeColor(elem){
-      let elementProperties = getCoords(elem);
-      
-     
-      if( window.scrollY <= elementProperties.height){
-         if(window.scrollY == 0) {
-            
-            elem.style.setProperty("--grid-cols", "1fr");
-         } else {
-            let fraction = Math.round((1 - (window.scrollY - elementProperties.top) * 1.6 / elementProperties.height) * 1000) / 1000;
-            //elem.style.setProperty("--grid-cols", fraction + "fr");
-            elem.style.gridTemplateColumns = "1fr " + fraction + "fr"; 
-         }
-         //console.log( Math.round((1 - window.scrollY / elementProperties.height) * 1000) / 1000);
-      } else {
-         elem.style.gridTemplateColumns = "1fr 0fr";
-      }
-   }
-   
+{   
    //section     - HTML section to be divided;
    //stableSpace - is space where no modification appears
    function DivideTwoColumnesGrid(section, initFr, endFr, space) {
@@ -64,20 +41,17 @@
    }
 
    let sectionOnScroll = document.querySelectorAll(".section");
-   let homeheader = document.querySelector(".header");
 
    window.addEventListener("scroll", function() {
 
-      if(window.innerWidth >= 640) {
-         DivideTwoColumnesGrid(homeheader, 0.7, 0.9, 1);
-         DivideTwoColumnesGrid(sectionOnScroll[0], 0.4 ,0.5, 1);
+      if(window.innerWidth >= 1024) {
+         DivideTwoColumnesGrid(sectionOnScroll[0], 0.7, 0.9, 0.8);
+         DivideTwoColumnesGrid(sectionOnScroll[1], 0.4 ,0.5, 0.8);
+         DivideTwoColumnesGrid(sectionOnScroll[2], 0 ,1, 0.3);
          // [...document.querySelectorAll(".section")].forEach(element => {
          //    DivideTwoColumnesGrid(element, 0.1, 0.9, 50);
          // })
-
       }
-
-
    }, false);
 
    function getCoords(elem) { // crossbrowser version
@@ -97,6 +71,4 @@
 
        return { top: Math.round(top), left: Math.round(left), height: box.height };
    }
-
-
 }

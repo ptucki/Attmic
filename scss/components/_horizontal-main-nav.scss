@@ -60,6 +60,7 @@ $common-margin: 15px;
     background-repeat: no-repeat;
     background-position: center;
     
+    
     @include a.breakpoint-min("zero") {
       height: $menu-height;
       margin-right: $common-margin;
