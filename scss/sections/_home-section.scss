@@ -5,6 +5,7 @@ $first-color: rgb(230, 230, 230);
 .section {
   grid-template-columns: none;
   @include a.font-arcon-regular(a.rem(16px), black, normal);
+  //@include a.font-cpmono(a.rem(16px), black, normal);
   width: 100%;
   height: 100vh;
   display: grid;
