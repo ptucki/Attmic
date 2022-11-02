@@ -1,7 +1,50 @@
 @use '../abstracts' as a;
 
 .footer {
+  @include a.font-arcon-regular(a.rem(14px), black, normal);
   width: 100%;
   height: 250px;
   background-color: black;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  &__card-item {
+    padding: 16px;
+  }
+
+  &__author-info {
+    color: white;
+    //background-color: red;
+  }
+
+  &__contact {
+    color: white;
+    //background-color: blue;
+  }
+
+  &__site-map {
+    color: white;
+    //background-color: green;
+  }
+
+  &__image-box {
+    color: white;
+  //background-color: yellow;
+  }
+
+  &__columns-header {
+    margin-bottom: 10px;
+    font-size: 2.0rem;
+  }
+
+  &__link {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      color: aquamarine;
+    }
+  }
+
+
 }
