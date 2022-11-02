@@ -31,6 +31,15 @@
   @if $line-height { line-height: $line-height; }
 }
 
+@mixin font-cpmono($size: false, $color: false, $weight: false, $line-height: false) {
+  font-family: 'CPmono_Plain', 'Courier New', monospace;
+  @if $size { font-size: $size; }
+  @if $color { color: $color; }
+  @if $weight { font-weight: $weight; }
+  @if $line-height { line-height: $line-height; }
+}
+
+
 // Clearfix
 %clearfix {
   *zoom: 1;

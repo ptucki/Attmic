@@ -19,3 +19,36 @@
   font-style: normal;
 
 }
+
+/* --- CPMono -------------------------------------------------------------- */
+@font-face {
+  font-family: 'CPMono_Bold';
+  src: url('../fonts/CPMono/CPMono_v07_Bold.woff2') format('woff2'),
+       url('../fonts/CPMono/CPMono_v07_Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CPMono_ExtraLight';
+  src: url('../fonts/CPMono/CPMono_v07_ExtraLight.woff2') format('woff2'),
+       url('../fonts/CPMono/CPMono_v07_ExtraLight.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CPMono_Light';
+  src: url('../fonts/CPMono/CPMono_v07_Light.woff2') format('woff2'),
+       url('../fonts/CPMono/CPMono_v07_Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CPMono_Black';
+  src: url('../fonts/CPMono/CPMono_v07_Plain.woff2') format('woff2'),
+       url('../fonts/CPMono/CPMono_v07_Plain.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
