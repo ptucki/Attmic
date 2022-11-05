@@ -2,10 +2,12 @@
 
 // https://www.youtube.com/watch?v=KzqQXDbDvus
 
+
+/* --- Arcon --------------------------------------------------------------- */
 @font-face {
   font-family: 'Arcon-Regular';
-  src: url('../fonts/Arcon-Regular.woff2') format('woff2'),
-       url('../fonts/Arcon-Regular.woff') format('woff');
+  src: url('../fonts/Arcon/Arcon-Regular.woff2') format('woff2'),
+       url('../fonts/Arcon/Arcon-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -13,8 +15,8 @@
 
 @font-face {
   font-family: 'Arcon-Rounded-Regular';
-  src: url('../fonts/Arcon-Rounded-Regular.woff2') format('woff2'),
-       url('../fonts/aArcon-Rounded-Regular.woff') format('woff');
+  src: url('../fonts/Arcon/Arcon-Rounded-Regular.woff2') format('woff2'),
+       url('../fonts/Arcon/Arcon-Rounded-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 
@@ -49,6 +51,32 @@
   font-family: 'CPMono_Black';
   src: url('../fonts/CPMono/CPMono_v07_Plain.woff2') format('woff2'),
        url('../fonts/CPMono/CPMono_v07_Plain.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* --- Monsterrat ---------------------------------------------------------- */
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src: url('../fonts/Montserrat/Montserrat-Regular.woff2') format('woff2'),
+       url('../fonts/Montserrat/Montserrat-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat-Bold';
+  src: url('../fonts/Montserrat/Montserrat-Bold.woff2') format('woff2'),
+       url('../fonts/Montserrat/Montserrat-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* --- Semplicita ---------------------------------------------------------- */
+
+@font-face {
+  font-family: 'Semplicita-Medium';
+  src: url('../fonts/Semplicita/Semplicita-Medium.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }

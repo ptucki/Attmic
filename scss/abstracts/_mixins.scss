@@ -39,6 +39,22 @@
   @if $line-height { line-height: $line-height; }
 }
 
+@mixin font-montserrat($size: false, $color: false, $weight: false, $line-height: false) {
+  font-family: 'Montserrat-Regular', Helvetica, Arial, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  @if $size { font-size: $size; }
+  @if $color { color: $color; }
+  @if $weight { font-weight: $weight; }
+  @if $line-height { line-height: $line-height; }
+}
+
+@mixin font-semplicita($size: false, $color: false, $weight: false, $line-height: false) {
+  font-family: 'Semplicita-Medium', Helvetica, Arial, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  @if $size { font-size: $size; }
+  @if $color { color: $color; }
+  @if $weight { font-weight: $weight; }
+  @if $line-height { line-height: $line-height; }
+}
+
 
 // Clearfix
 %clearfix {

@@ -1,36 +1,92 @@
 @use '../abstracts' as a;
 
+$footer-logo-size: 160px;
+$footer-logo-size-tablet: 100px;
+
+$footer-transition-time: 0.5s;
+
 .footer {
-  @include a.font-arcon-regular(a.rem(14px), black, normal);
+  @include a.font-semplicita(a.rem(14px), black, normal);
   width: 100%;
   height: 250px;
-  background-color: black;
+  background-color: a.$third-color;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  border-top: 3px solid a.$second-color;
+  transition-duration: $footer-transition-time;
+
+  @include a.breakpoint-min("zero") {
+    transition-duration: $footer-transition-time;
+
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+
+
+  @include a.breakpoint-min("tablet-small") {
+    transition-duration: $footer-transition-time;
+    grid-template-rows: initial;
+    grid-template-columns: 1fr 1fr 1.5fr 0.5fr;
+  }
+
+  @include a.breakpoint-min("tablet-wide") {
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  
 
   &__card-item {
     padding: 16px;
   }
 
+/* --- Columns ------------------------------------------------------------- */
+
   &__author-info {
-    color: white;
+    color: a.$second-color;
     //background-color: red;
   }
 
   &__contact {
-    color: white;
+    color: a.$second-color;
     //background-color: blue;
   }
 
   &__site-map {
-    color: white;
+    color: a.$second-color;
     //background-color: green;
   }
 
   &__image-box {
-    color: white;
-  //background-color: yellow;
+    padding: 0;
+    margin: 0;
+    color: a.$second-color;
+    background-color: a.$first-color;
   }
+
+/* --- Image --------------------------------------------------------------- */
+  
+  &__image {
+    display: block;
+    float: left;
+    width: $footer-logo-size;
+    height: $footer-logo-size;
+    transform: translateX(calc(0px - $footer-logo-size * 0.75));
+
+    @include a.breakpoint-min("tablet-small") {
+      width: $footer-logo-size-tablet;
+      height: $footer-logo-size-tablet;
+      transform: translateX(calc(0px - $footer-logo-size-tablet * 0.75));
+      transition-duration: $footer-transition-time;
+    }
+
+    @include a.breakpoint-min("tablet-wide") {
+      width: $footer-logo-size;
+      height: $footer-logo-size;
+      transform: translateX(calc(0px - $footer-logo-size * 0.75));
+    }
+
+
+  }
+
+/* --- Typography ---------------------------------------------------------- */
 
   &__columns-header {
     margin-bottom: 10px;
@@ -38,12 +94,33 @@
   }
 
   &__link {
-    color: white;
+    color: a.$second-color;
     text-decoration: none;
 
     &:hover {
-      color: aquamarine;
+      color: a.$first-color;
     }
+  }
+
+/* --- Copyright ----------------------------------------------------------- */
+
+  &__copyright {
+    //background-color: red;
+    color: a.$forth-color;
+    display: block;
+    position: absolute;
+    transform-origin: left top;
+    transform: rotate(90deg) translateY(-55px);
+
+    @include a.breakpoint-min("tablet-small") {
+      transition-duration: $footer-transition-time;
+      transform: rotate(90deg) translateY(-40px);
+    }
+
+    @include a.breakpoint-min("tablet-wide") {
+      transform: rotate(90deg) translateY(-55px);
+    }
+    
   }
 
 
