@@ -56,41 +56,46 @@ $common-margin: 15px;
     // logo positioning
     width: $menu-logo-box;
     grid-area: logo;
-    //background-color: aqua;
-    background-image: url(../../svg/logo-text-light.svg), none;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    padding-left: 15px;
+    padding-right: 15px;
+
     
     
     @include a.breakpoint-min("zero") {
       height: $menu-height;
-      margin-right: $common-margin;
       justify-self: end;
-      transition-duration: .2s;
-
-      &:hover {
-        transform: translateX(-10px);
-      }
-
     }
 
     @include a.breakpoint-min("tablet-wide") {
       height: $menu-height;
-      margin-left: $common-margin;
       justify-self: start;
-
-      &:hover {
-        transform: translateX(10px);
-      }
+    
     }
 
     &-link {
-      
+      background-image: url(../../svg/logo-text-light.svg), none;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
       display: block;
       position: relative;
       width: 100%;
       height: 100%;
+      
+
+      @include a.breakpoint-min("zero") {
+        transition-duration: .2s;  
+  
+        &:hover {
+          transform: translateX(-10px);
+        }
+      }
+
+      @include a.breakpoint-min("tablet-wide") {
+        &:hover {
+          transform: translateX(10px);
+        }
+      }
     }
   }
 
