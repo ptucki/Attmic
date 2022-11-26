@@ -1,5 +1,11 @@
 {
-  "editor.fontSize": 12,
+  "editor.fontSize": 11,
+  "editor.rulers": [80],
+
+  "workbench.colorCustomizations": {
+    "editorRuler.foreground": "#313131",
+  },
+
 
   "liveSassCompile.settings.formats":[
     // This is Default.
