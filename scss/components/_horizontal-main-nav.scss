@@ -7,17 +7,19 @@ $color3: a.$third-color;
 
 
 //Menu fonts
-$menu-font-size: 12px;
-$letter-spacing: 3px;
+$menu-font-size: 16px;
+$letter-spacing: 1px;
 
 //Menu sizes
 $menu-height: 50px;
-$menu-list-tablet-width: 200px;
+$menu-logo-box: 110px;
+$menu-list-tablet-width: 300px;
 $common-margin: 15px;
 
 .main-nav {
   
-  @include a.font-arcon-regular(a.rem($menu-font-size), black, normal);
+  @include a.font-semplicita(a.rem($menu-font-size), black, normal);
+  //@include a.font-cpmono(a.rem($menu-font-size), black, normal);
   letter-spacing: $letter-spacing;
   //background-color: red;
   position: fixed;
@@ -27,13 +29,14 @@ $common-margin: 15px;
   transition-duration: 0.7s;
   top: 0px;
   
+  
   @include a.breakpoint-min("zero") {
     width: 100%;
     display: grid;
     grid-template-columns: $menu-height auto;
     grid-template-rows: $menu-height; 
     grid-template-areas: "hamburger logo";
-    background-color: #070606;
+    background-color: a.$third-color;
   }
 
   @include a.breakpoint-min("tablet-small") {
@@ -42,55 +45,57 @@ $common-margin: 15px;
 
   @include a.breakpoint-min("tablet-wide") {
     display: grid;
-    grid-template-columns: 150px 150px auto;
+    grid-template-columns: $menu-logo-box 150px auto;
     grid-template-rows: $menu-height;
-    grid-template-areas: "logo hamburger menu ";    
+    grid-template-areas: "logo hamburger menu";
   }
   
   // LOGO
   &__logo {
     
     // logo positioning
-    width: 100px;
+    width: $menu-logo-box;
     grid-area: logo;
-    //background-color: aqua;
-    background-image: url(../../svg/logo.svg), none;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    
     
     @include a.breakpoint-min("zero") {
       height: $menu-height;
-      margin-right: $common-margin;
       justify-self: end;
-      filter: grayscale(100%);
-      opacity: 0.8;
-      transition-duration: .2s;
-
-      &:hover {
-        filter: grayscale(0%);
-        opacity: 1;
-      }
     }
 
     @include a.breakpoint-min("tablet-wide") {
-      width: 100px;
       height: $menu-height;
-      margin-left: $common-margin;
       justify-self: start;
-
-      &:hover {
-        filter: grayscale(0%);
-        transform: translateX(7px);
-        opacity: 1;
-      }
+    
     }
 
     &-link {
+      background-image: url(../svg/logo-text-light.svg), none;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
       display: block;
       position: relative;
       width: 100%;
       height: 100%;
+      
+
+      @include a.breakpoint-min("zero") {
+        transition-duration: .2s;  
+  
+        &:hover {
+          transform: translateX(-10px);
+        }
+      }
+
+      @include a.breakpoint-min("tablet-wide") {
+        &:hover {
+          transform: translateX(10px);
+        }
+      }
     }
   }
 
@@ -104,22 +109,24 @@ $common-margin: 15px;
       width: 100%;
       margin-top: $menu-height;
       position: absolute;
-      background-color: rgba(14, 17, 17,0.3);
-      backdrop-filter: blur(2px);
+      background-color: a.$third-color;
+      opacity: 0.9;
+      backdrop-filter: blur(2px);// brightness(0.2);
     }
 
     @include a.breakpoint-min("tablet-small") {
-      padding-top: $menu-height;
+      
+      padding-top: calc($menu-height + 10px);
       top: -$menu-height;
       display: block;
       position: absolute;
       left: -$menu-list-tablet-width;
       height: 107vh;
-      width: $menu-list-tablet-width;
+      width: 300px;
       transition-duration: 0.7s;
       transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
-      background-color: rgba(14, 17, 17, 0.2);
-      backdrop-filter: blur(2px);
+      //background-color: rgba(14, 17, 17, 0.2);
+      //backdrop-filter: blur(2px) brightness(0.4);
     }
 
     @include a.breakpoint-min("tablet-wide") {
@@ -141,6 +148,8 @@ $common-margin: 15px;
   }
 
   &__item {
+
+
     // @include a.breakpoint-min("zero") {
     //   margin-left: 0px;
     // }
@@ -153,11 +162,11 @@ $common-margin: 15px;
       margin-left: 0px;
       box-sizing: border-box;
       display: flex;
-      min-width: 140px;
+      min-width: 180px;
     }
   }
   
-  &__link {
+  &__link {   
     box-sizing: border-box;
     transition-duration: 0.1s;
     color: $color2;
@@ -179,14 +188,15 @@ $common-margin: 15px;
 
     @include a.breakpoint-min("tablet-wide") {
       justify-content: center;
+      padding-left: 0px;
     }
 
     &:hover, &:focus {
       
     
       @include a.breakpoint-min("zero") {
-        color: $color2;
-        background-color: rgba(14, 17, 17, 0.3);
+        color: $color1;
+        background-color: rgba(255, 255, 255, 0.1);
       }
 
       @include a.breakpoint-min("tablet-small") {

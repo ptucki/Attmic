@@ -1,0 +1,8 @@
+/* Vitals */
+@use "core/reset";
+@use "abstracts";
+@use "components/horizontal-main-nav";
+@use "sections/footer";
+
+/* Depends on template */
+@use "sections/home-section";

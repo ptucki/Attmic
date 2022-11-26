@@ -1,86 +1,83 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="225"
-   height="50"
-   viewBox="0 0 59.531251 13.229167"
+   width="40"
+   height="40"
+   viewBox="0 0 40 40"
    version="1.1"
-   id="svg8"
-   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
-   sodipodi:docname="logo.svg">
-  <defs
-     id="defs2" />
+   id="svg278"
+   inkscape:version="1.2.1 (0f2f062aeb, 2022-09-21, custom)"
+   sodipodi:docname="logo"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="88.208306"
-     inkscape:cy="0.71953295"
+     id="namedview280"
+     pagecolor="#666666"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="true"
+     inkscape:deskcolor="#666666"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     inkscape:document-rotation="0"
      showgrid="false"
-     units="px"
-     showguides="true"
-     inkscape:guide-bbox="true"
-     inkscape:snap-page="true"
-     inkscape:snap-intersection-paths="true"
-     inkscape:snap-bbox="true"
-     inkscape:snap-bbox-midpoints="true"
-     inkscape:bbox-paths="true"
-     inkscape:bbox-nodes="true"
-     inkscape:snap-midpoints="true"
-     inkscape:snap-bbox-edge-midpoints="true"
-     inkscape:snap-object-midpoints="true"
-     inkscape:snap-center="true"
-     inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1" />
-  <metadata
-     id="metadata5">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
+     inkscape:zoom="4.2835116"
+     inkscape:cx="14.240652"
+     inkscape:cy="53.11063"
+     inkscape:window-width="923"
+     inkscape:window-height="1016"
+     inkscape:window-x="74"
+     inkscape:window-y="27"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs275">
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1186-4"
+       id="radialGradient992-3"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(-1.4999997,-4.0422176e-5,6.1328909e-7,-1.4999995,-165.00029,64.99462)"
+       cx="-136.66679"
+       cy="30.000114"
+       fx="-136.66679"
+       fy="30.000114"
+       r="20" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1186-4">
+      <stop
+         style="stop-color:#7fffd4;stop-opacity:1"
+         offset="0"
+         id="stop1182" />
+      <stop
+         style="stop-color:#4614ff;stop-opacity:1"
+         offset="1"
+         id="stop1184" />
+    </linearGradient>
+  </defs>
   <g
-     inkscape:label="Warstwa 1"
+     inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
     <path
-       id="rect837"
-       style="fill:#7fffd4;fill-opacity:1;stroke:#ffffff;stroke-width:0.0999999;stroke-linejoin:bevel;stroke-opacity:0"
-       d="M 11.671875,0 0,50 H 50 C 50,33.333333 66.155802,2.3398231 50,0 Z M 24.787109,9.8476562 36.806641,25.505859 17.511719,41.162109 28.589844,25 Z"
-       transform="scale(0.26458334)" />
-    <text
-       xml:space="preserve"
-       style="fill:#ffffff;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.9597px;line-height:1.25;font-family:'Arial Rounded MT Bold';-inkscape-font-specification:'Arial Rounded MT Bold, ';letter-spacing:0px;fill:#ffffff;fill-opacity:1;stroke-width:0.264582"
-       x="9.8553743"
-       y="13.228565"
-       id="text841"
-
-       transform="scale(1.0152322,0.98499632)"><tspan
-         sodipodi:role="line"
-         id="tspan839"
-         x="9.8553743"
-         y="13.228565"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.9597px;font-family:'Nautilus Pompilius';-inkscape-font-specification:'Nautilus Pompilius, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.264582">Patrys</tspan></text>
+       id="path980-3"
+       style="fill:#4614ff;fill-opacity:1;stroke:none;stroke-width:0.133333;stroke-linejoin:bevel;stroke-opacity:1"
+       d="M 19.999882,0 A 19.999993,19.999993 0 0 0 -1.12e-4,19.999994 19.999993,19.999993 0 0 0 19.999882,39.999984 19.999993,19.999993 0 0 0 39.999876,19.999994 19.999993,19.999993 0 0 0 19.999882,0 Z m -0.01965,9.999999 a 9.9999966,9.9999966 0 0 1 0.01965,0 9.9999966,9.9999966 0 0 1 9.999995,9.999995 9.9999966,9.9999966 0 0 1 -9.999995,9.999991 9.9999966,9.9999966 0 0 1 -9.9999991,-9.999991 9.9999966,9.9999966 0 0 1 9.9804701,-9.999995 z" />
+    <rect
+       style="fill:#4614ff;fill-opacity:1;stroke:none;stroke-width:0.133333;stroke-linejoin:bevel;stroke-opacity:1"
+       id="rect982-5"
+       width="9.9999962"
+       height="19.999992"
+       x="29.999855"
+       y="-1.4530125e-05" />
+    <path
+       id="path984-6"
+       style="fill:url(#radialGradient992-3);fill-opacity:1;stroke:none;stroke-width:0.133333;stroke-linejoin:bevel;stroke-opacity:1"
+       d="M 19.999882,0 A 19.999993,19.999993 0 0 0 -1.12e-4,19.999994 h 9.9999949 a 9.9999966,9.9999966 0 0 1 9.9804701,-9.999995 9.9999966,9.9999966 0 0 1 0.01965,0 9.9999966,9.9999966 0 0 1 9.999992,9.999995 H 40 A 19.999993,19.999993 0 0 0 19.999882,0 Z" />
   </g>
 </svg>

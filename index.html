@@ -4,14 +4,60 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/app.css">
-  <title>Document</title>
+  <link rel="stylesheet" href="./css/home.css" />
+  <title>Attmic - Strona główna</title>
 
   <!-- <script defer type="text/javascript" src="js/hamburger.js"></script> -->
-  <script defer type="text/javascript" src="js/open-hide-menu-phone.js"></script>
+  <script defer type="text/javascript" src="js/main-navigation.js"></script>
+  <script defer type="text/javascript" src="js/menu-links.js"></script>
 </head>
 <body>
   
+  <!-- Main content of page -->
+  <main class="home-main menu-reset">
+    <header class="header" id="link-home">
+      <div class="header__container">
+        <h1 class="header__message">NEW <span class="header__message--decor">DEFINITION</span> OF AUTOMATION.</h1>
+        <ul class="header__list">
+          <li class="header__list-item">Podnosimy punkty automatyzacji.</li>
+          <li class="header__list-item">Zajmujemy się projektowaniem i produkcją maszyn.</li>
+          <li class="header__list-item">Automatyzacją urządzeń i linii produkcyjnych.</li>
+          <li class="header__list-item">Poprawiamy przebiegi ścieżek technologicznych.</li>
+        </ul>
+      </div>
+      <a href="#link-about" class="header__button"><span class="header__button-wrapper">&#10095;</span></a>
+      <div class="header__image"></div>
+      
+    </header>
+
+    <section class="section">
+        <div class="section__card section__card-about" id="link-about">
+          <h1 class="section__card-header">O nas</h1>
+          <p class="section__card-text">Budujemy maszyny i pracujemy nad automatyzacją urządzeń i linii. Połączyła nas pasja do automatyzacji, nowych technologii oraz optymalizacja procesów produkcyjnych. Dążymy do uzyskania poprawy wydajności poprzez dokładne zebranie i analizę danych. Wszystkie urządzenia są indywidualnie dostosowane do miejsca, w którym pracują.
+            Posiadamy wieloletnie doświadczenie zdobyte w projektowaniu ścieżek technologicznych, projektowaniu i parametryzacji urządzeń.</p>
+          <a href="#link-projects" class="section__button">&#10095;</a>
+        </div>
+
+        <div class="section__card section__card-projects" id="link-projects">
+          <div class="section__card-projects-container">
+            <h1 class="section__card-header">Nasze ostatnie projekty</h1>
+            <p class="section__card-text">- suszarnia farmaceutyczna – suszarnia konwekcyjna do suszenia arkuszy bibuły nasączonych antybiotykami pracująca w strefie czystej. Suszarania z cyrkulacją suchego powietrza, usuwaniem wilgotnego powietrza poza pomieszczenie oraz połączonego z centralą nawiewną do wyrównywania ciśnienia. Układ wentylatorów nawiewnych, cyrkulacyjnych oraz wywiewncyh. Wszystkim zarządza komputer z oprogramowanie przygotowanym do specyfiki pracy i produktu. Kontrola odbywa się za pomocą czterech termo-higrometrów. </p>
+
+            <p class="section__card-text">- urządzenie pakujące – urządzenie do pakowania półautomatycznego, podzielonego na trzy etapy. Urządzenie jest w stanie termoformować, zgrzewać i wycinać z formy. Oprogramowanie dopasowane do urządzenie pozwala pracować na szerokiej gamie materiałów do pakowania. Matryce zaprojektowane do produtku.</p>
+            <a href="#link-contact" class="header__button">&#10095;</a>
+          </div>
+        </div>
+
+        <div class="section__card section__card-contact" id="link-contact">
+          <p class="section__card-text">Contact the author of this page:</p>
+          <address class="section__card-text">
+            <a class="section__card-link" href="mailto:attmic@attmic.com">attmic@attmic.com</a><br>
+            <a class="section__card-link" href="tel:+48696662523">+48 696 662 523</a>
+          </address>
+        </div>
+      </div>
+  </main>
+
   <!-- Main navigation menu -->
   <nav class="main-nav">
     <div class="main-nav__logo"><a class="main-nav__logo-link" href="#"></a></div>
@@ -23,32 +69,40 @@
       </svg>
     </div>
     <ul class="main-nav__list">
-      <li class="main-nav__item"><a class="main-nav__link main-nav__link--back main-nav__link--active" href="#">Home</a></li>
-      <li class="main-nav__item"><a class="main-nav__link main-nav__link--back" href="#">News</a></li>
-      <li class="main-nav__item"><a class="main-nav__link main-nav__link--back" href="#">Contact</a></li>
-      <li class="main-nav__item"><a class="main-nav__link main-nav__link--back" href="#">About</a></li>
+      <li class="main-nav__item"><a class="main-nav__link main-nav__link--active" href="#link-home">Główna</a></li>
+      <li class="main-nav__item"><a class="main-nav__link" href="#link-about">O nas</a></li>
+      <li class="main-nav__item"><a class="main-nav__link" href="#link-projects">Projekty</a></li>
+      <li class="main-nav__item"><a class="main-nav__link" href="#link-contact">Kontakt</a></li>
     </ul>
   </nav>
-  
-  <!-- Header -->
-  <header class="header menu-reset">
-    <hi class="header__welcome-text">All about performance</hi>
-  </header>
 
-  <!-- Main content of home page -->
-  <main class="home-content menu-reset">
-    <section class="home-content__section">
-      <h1 class="home-content__text">SIEMA1</h1>
-    </section>
-    <section class="home-content__section">
-      <h1 class="home-content__text">SIEMA2</h1>
-    </section>
-    <section class="home-content__section">
-      <h1 class="home-content__text">SIEMA3</h1>
-    </section>
-  </main>
 
-  <footer class="footer menu-reset"> Witajecie </footer>
+  <!-- Footer -->
+  <footer class="footer menu-reset">
+    <div class="footer__author-info footer__card-item">
+      <h1 class="footer__columns-header">Autor</h1>
+      <p class="footer_text footer__item">Attmic</p>
+    </div>
+    <div class="footer__contact footer__card-item">
+      <h1 class="footer__columns-header">Kontakt</h1>
+      <p class="footer_text"><a href="maito:attmic@attmic.com" class="footer__link">attmic@attmic.com</a></p>
+    </div>
+    <nav class="footer__site-map footer__card-item">
+      <h1 class="footer__columns-header">Nawigacja</h1>
+      <ul class="footer__item-list">
+        <li class="footer__item"><a href="#link-home" class="footer__link">Strona główna</a></li>
+        <li class="footer__item"><a href="#link-about" class="footer__link">O nas</a></li>
+        <li class="footer__item"><a href="#link-projects" class="footer__link">Projekty</a></li>
+        <li class="footer__item"><a href="#link-contact" class="footer__link">Kontakt</a></li>
+      </ul>
+    </nav>
+    <figure class="footer__image-box footer__card-item">
+      
+      <img src="./svg/logo.svg" class="footer__image" alt="" />
+      <div class="footer__copyright">&nbsp;© Attmic 2022</div>
+    </figure>
+    
+  </footer>
   
 </body>
-</html>
+</html> 
