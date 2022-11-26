@@ -31,13 +31,15 @@ function OpenHideMainNav() {
   else {
     alert("Something wrong")
   }
+
+
 }
 
 // Resets style
 function Reset() {
   list.style.display = "none";
   list.style.display = "block";
-  
+  //do nothing
   list.style = init_style;
   if(window.innerWidth > 1024) {
     document.querySelector(".main-nav").style.top = "0px";
@@ -46,12 +48,13 @@ function Reset() {
     //do nothing
   }
   else if (window.scrollY == 0) {
-    //do nothing
+    list.style.display = "block";
   }
   else {
     document.querySelector(".main-nav").style.top = "-50px";
   }
-  
+
+
   ResetHamburger();
 }
 
@@ -107,6 +110,15 @@ window.addEventListener("scroll", function(event) {
   else{
     // fix menu bar
     document.querySelector(".main-nav").style.top = "0px";
+
+  }
+
+  if(window.scrollY >= (window.innerHeight - 51) && window.innerWidth > 640) {
+    document.querySelector(".main-nav").style.background = "rgb(17, 21, 23)";
+  } else if (window.innerWidth <= 640){
+    document.querySelector(".main-nav").style.background = "rgb(17, 21, 23)";
+  } else {
+    document.querySelector(".main-nav").style.background = "none";
   }
 
   this.oldScroll = this.scrollY;

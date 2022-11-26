@@ -6,58 +6,150 @@ $head-dark-forth-color: darken(a.$forth-color, 5%);
 /* --- Header -------------------------------------------------------------- */
 .header{
   overflow-x: hidden;
+  overflow-y: hidden;
   width: 100%;
   height: 100vh;
   background-color: a.$third-color;// a.$third-color;
   background-image: 
-    //url("../../img/png/bg.png"),
     linear-gradient(
       180deg,
       rgba(a.$third-color, 0) 0%,
-      rgba(a.$third-color, 0.9) 30%,
-      rgba(a.$third-color, 0.9) 70%,
+      rgba(a.$third-color, 0.85) 15%,
+      rgba(a.$third-color, 0.85) 50%,
       rgba(a.$third-color, 0) 100%,
     ),
-    url("../../img/png/bg.png");
+    url(./../img/png/bg.png);
   //background-repeat: no-repeat;
   //background-attachment: fixed;
   background-position: center; 
   background-size: auto;
   display: grid;
+  grid-template-rows: auto 70px 200px;
 
   &__container {
+    //background-color: red;
     width: auto;
     height: auto;
     justify-self: center;
     align-self: center;
-    margin-bottom: 100px;
+    margin-bottom: 00px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @include a.breakpoint-min("zero") {
+      margin-top: 50px;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    @include a.breakpoint-min("tablet-wide") {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+    }
+  }
+
+  &__image {
+    background: url(./../img/png/header-image.png);
+    background-position: bottom;
+    background-repeat: repeat-x;
+    width: 100%;
+    min-height: 200px
   }
 
   &__message {
-    @include a.font-cpmono(a.rem(60px), black, normal);
+    grid-area: 1 / 2;
+    //background-color: yellow;
+    align-self: center;
+    @include a.font-semplicita(a.rem(60px), black, normal);
     //font-weight: bold;
     color: a.$second-color;
     //text-shadow: 4px 6px a.$forth-color;
     text-align: center;
     padding-right: 20px;
     padding-left: 20px;
-    animation: text-emerging 1s ease-in-out 0.4s forwards;
+    animation: text-emerging 0.8s ease-in-out 0.4s forwards;
     opacity: 0;
 
     @include a.breakpoint-min("zero") {
       font-size: 4.0rem;
+      grid-area: 1 / 1;
     }
 
     @include a.breakpoint-min("tablet-small") {
+      font-size: 4.0rem;
+    }
+
+    @include a.breakpoint-min("tablet-wide") {
+      grid-area: 1 / 2;
       font-size: 6.0rem;
+      text-align: left;
     }
 
     &--decor {
-      color: a.$first-color;
+      color: a.$forth-color;
+      background-color: a.$second-color;
+      border-radius: 15px;
+      line-height: 1.4;
       // //text-shadow: 4px 6px a.$forth-color;
       // font-style: italic;
       // font-size: 1.3em;
+      padding: 10px 10px 0px 10px;
+    } 
+  }
+
+  &__list {
+    //background-color: red; 
+    @include a.font-semplicita(a.rem(25px), black, normal);
+    color: a.$second-color;
+    
+
+    @include a.breakpoint-min("zero") {
+      font-size: 20px;
+      margin-top: 0px;
+      grid-area: 2 / 1;
     }
+
+    @include a.breakpoint-min("tablet-wide") {
+      margin-top: 20px;
+      font-size: 25px;
+      grid-area: 1 / 1;
+    }
+
+    &-item {
+      opacity: 0;
+      padding: 10px 0px 10px 20px;
+
+      @include a.breakpoint-min("zero") {
+        @include a.font-semplicita(a.rem(20px), black, normal);
+        text-align: center;
+      }
+
+      @include a.breakpoint-min("tablet-small") {
+        @include a.font-semplicita(a.rem(25px), black, normal);
+      }
+
+      @include a.breakpoint-min("tablet-wide") {
+        @include a.font-semplicita(a.rem(25px), black, normal);
+        text-align: right;
+        border-right: 2px solid a.$first-color;
+        padding-right: 20px;
+      }
+
+      &:nth-child(1) {
+        animation: text-emerging 0.8s ease-in-out 0.6s forwards;
+      }
+      &:nth-child(2) {
+        animation: text-emerging 0.8s ease-in-out 0.7s forwards;
+      }
+      &:nth-child(3) {
+        animation: text-emerging 0.8s ease-in-out 0.8s forwards;
+      }
+      &:nth-child(4) {
+        animation: text-emerging 0.8s ease-in-out 0.96s forwards;
+      }
+      
+    }
+
   }
 
 }
@@ -69,9 +161,9 @@ $head-dark-forth-color: darken(a.$forth-color, 5%);
       filter: blur(4px);
       transform: translateY(-20%);
       //transform: translateX(0%);
-      color: a.$forth-color;
+      color: a.$first-color;
     }
-    50% {
+    75% {
       color: a.$first-color;
     }
     100% {
@@ -102,46 +194,178 @@ $head-dark-forth-color: darken(a.$forth-color, 5%);
       color: a.$second-color;
     }
   }
+
+
 }
+
+
 
 /* --- Section ------------------------------------------------------------- */
 
 .section {
   
-  @include a.font-semplicita(a.rem(40px), black, normal);
-  color: a.$second-color;
-  background-color: gray;
+  background-color: a.$second-color;
   min-height: 100vh;
-  background-image: url("../../img/png/background2.png");
+  background-image: url(../img/png/background6.png);
   background-repeat: repeat-x;
   //background-attachment: fixed;
   background-position: bottom; 
   background-size: auto;
-  padding: 50px;
   padding-bottom: 100px;
 
   display: grid;
 
-  &__card {
+  @include a.breakpoint-min("zero") {
+    //padding: 15px;
+  }
 
-    width: auto;
+  @include a.breakpoint-min("tablet-small") {
+   //padding: 50px;
+  }
+
+  &__card {
+    @include a.font-semplicita(a.rem(20px), a.$third-color, normal);
+    justify-self: center;
+    width: fit-content;
     display: grid;
     padding: 20px; 
-    margin-bottom: 20px;
-    grid-template-columns: auto auto;
-    //background-color: a.$third-color;
+    margin-bottom: 30px;
+    grid-auto-rows: min-content;
+    //background-color: white;
     //box-shadow: -2px 0px a.$forth-color, 2px 0px a.$forth-color;
     
 
-    @include a.breakpoint-min("zero") { 
-      grid-template-columns: initial;
-      grid-template-rows: auto auto;
-      
+
+    &-header {
+      @include a.font-semplicita(a.rem(40px), a.$third-color, normal);
+      padding: 20px;
+      color: a.$third-color;
+
+      @include a.breakpoint-min("zero") {
+        font-size: a.rem(25px);
+        padding: 10px;
+      }
+
+      @include a.breakpoint-min("tablet-small") {
+        font-size: a.rem(32px);
+        padding: 20px;
+      }
+      @include a.breakpoint-min("tablet-wide") {
+        font-size: a.rem(40px);
+      }
     }
 
-    @include a.breakpoint-min("tablet-small") { 
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: initial;
+    &-text {
+      color: a.$third-color;
+      padding: 20px;
+      line-height: 2;
+
+      @include a.breakpoint-min("zero") {
+        font-size: a.rem(16px);
+        padding: 10px;
+      }
+
+      @include a.breakpoint-min("tablet-small") {
+        font-size: a.rem(20px);
+        padding: 20px;
+      }
+    }
+
+    &-link {
+      text-decoration: none;
+      color: a.$third-color;
+       &:hover {
+        color: a.$forth-color;
+       }
+    }
+
+    &-about {
+      grid-auto-rows: min-content;
+      min-height: calc(100vh - 190px);
+
+      @include a.breakpoint-min("zero") {
+        min-height: calc(100vh - 120px);
+        margin: 15px;
+        border-radius: 25px;
+        background: #e6e6e6;
+        box-shadow:  10px 10px 20px #c4c4c4,
+                    -10px -10px 20px #ffffff;
+      }
+
+      @include a.breakpoint-min("tablet-small") {
+        margin: 50px;
+        border-radius: 50px;
+        background: #e6e6e6;
+        box-shadow:  20px 20px 40px #c4c4c4,
+                    -20px -20px 40px #ffffff;
+      }
+    }
+
+    &-projects {
+      max-width: 100%;
+      min-height: calc(100vh - 300px);
+      background: linear-gradient(50deg, rgba(a.$forth-color, 0.4) 0%, a.$first-color 100%);
+      box-shadow: 10px 0px 15px white, 10px 0px 25px white;
+      padding: 20px 50px 125px 50px;
+      margin: 50px 0 0 0;
+
+      
+      @include a.breakpoint-min("zero") {
+        padding: 20px 15px 125px 15px;
+      }
+
+      @include a.breakpoint-min("tablet-small") {
+        padding: 20px 50px 125px 50px;
+      }
+
+      &-container {
+        position: relative;
+        top: -100px;
+        border-radius: 50px;
+        background-color: a.$third-color;
+        padding: 20px;
+
+        @include a.breakpoint-min("zero") {
+          min-height: calc(100vh - 100px);
+          border-radius: 25px;
+          top: -50px;
+        }
+        @include a.breakpoint-min("tablet-small") {
+          min-height: calc(100vh - 150px);
+ 
+        }
+        @include a.breakpoint-min("tablet-wide") {
+          min-height: calc(100vh - 190px);
+          border-radius: 50px;
+          top: -100px;
+        }
+
+        & > .section__card-header {
+          color: a.$second-color;
+        }
+
+        & > .section__card-text {
+          color: a.$second-color;
+        }
+      }
+    }
+
+    &-contact {
+      position: relative;
+      top: -130px;
+      grid-auto-rows: min-content;
+
+      @include a.breakpoint-min("zero") {
+        margin: 15px;
+        border-radius: 25px;
+        background: a.$second-color;
+      }
+
+      @include a.breakpoint-min("tablet-small") {
+        margin: 50px;
+        border-radius: 50px;
+
+      }
     }
   }
 
@@ -172,7 +396,7 @@ $head-dark-forth-color: darken(a.$forth-color, 5%);
     display: grid;
     box-sizing: content-box;
     align-items: center;
-    color: a.$second-color;
+    color: a.$third-color;
     
 
     @include a.breakpoint-min("zero") { 
@@ -192,10 +416,115 @@ $head-dark-forth-color: darken(a.$forth-color, 5%);
       font-size: 4rem;
       padding-bottom: 0px;
       height: 100%;
-      border-right: 2px solid lighten(a.$third-color, 10%);
+      border-right: 3px solid lighten(a.$forth-color, 10%);
       border-bottom: initial;
       margin-right: 20px;
       padding-right: 20px;
     }
   }
+}
+
+
+#link-about {
+  @include a.breakpoint-min("zero") { 
+    scroll-margin-top: 15px;
+  }
+  @include a.breakpoint-min("tablet-small") { 
+    scroll-margin-top: 50px;
+  }
+  @include a.breakpoint-min("tablet-wide") { 
+    scroll-margin-top: 100px;
+  }
+}
+
+#link-projects {
+  @include a.breakpoint-min("zero") { 
+    scroll-margin-top: 45px;
+  }
+  @include a.breakpoint-min("tablet-small") { 
+    scroll-margin-top: 50px;
+  }
+  @include a.breakpoint-min("tablet-wide") { 
+    scroll-margin-top: 155px;
+  }
+}
+
+#link-contact {
+  @include a.breakpoint-min("zero") { 
+    scroll-margin-top: 50px;
+  }
+  @include a.breakpoint-min("tablet-small") { 
+    scroll-margin-top: 50px;
+  }
+  @include a.breakpoint-min("tablet-wide") { 
+    scroll-margin-top: 75px;
+  }
+}
+
+
+.header__button {
+  @include a.font-semplicita(a.rem(15px), black, normal);
+  position: relative;
+  top: 0px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: a.$first-color;
+  background-color: a.$third-color;
+  border-radius: 10px;
+  box-shadow: 0 3px a.$first-color;
+  border: 1px solid a.$first-color;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: block;
+  width: 60px;
+  height: 30px;
+  line-height: 35px;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  transition-duration: 0.2s;
+  margin: auto auto auto auto;
+
+  &:hover {
+    top: 3px;
+    box-shadow: 0 0px 2px a.$first-color;
+    color: a.$first-color;
+    background-color: a.$forth-color;
+  }
+}
+
+.section__button {
+  @include a.font-semplicita(a.rem(15px), black, normal);
+  position: relative;
+  top: 0px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: a.$third-color;
+  background-color: a.$second-color;
+  border-radius: 10px;
+  box-shadow: 0 5px a.$third-color;
+  border: 1px solid a.$third-color;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: block;
+  width: 60px;
+  height: 30px;
+  line-height: 35px;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  transition-duration: 0.2s;
+  margin: auto auto auto auto;
+
+  &:hover {
+    top: 3px;
+    box-shadow: 0 0px 2px a.$third-color;
+    color: a.$third-color;
+    background-color: a.$first-color;
+  }
+  
+  &-wrapper {
+    transform: rotate(90deg);
+  }
+
 }
